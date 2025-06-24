@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 GROQ_API_KEY = "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"

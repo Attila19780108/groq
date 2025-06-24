@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 GROQ_API_KEY = "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"
@@ -30,4 +31,5 @@ def chat():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
